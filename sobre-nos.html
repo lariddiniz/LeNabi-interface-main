@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeNabi - Sobre Nós</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a2288264db.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="produto.css">
+</head>
+
+<body>
+    <header id="header">
+        <div class="container-fundo">
+            <div class="container">
+                <a href="index.html">
+                    <div class="logo">
+                        <img src="img-interface/lenabi 1.png" alt="borboleta voando dentro de um livro">
+                        <h2>LeNabi</h2>
+                    </div>
+                </a>
+                <div class="buscar">
+                    <input type="text" id="buscar" placeholder="Buscar livro" oninput="buscarProduto()">
+                </div>
+
+                <div id="favoritos" onclick="toggleFavoritos()">
+                    <div class="imagem">
+                        <i class="fa-regular fa-heart" style="color: #522318;"></i>
+                    </div>
+                    <span id="cont-favoritos">0</span>
+                </div>
+                <!-- Dentro da div do usuário logado -->
+                <div class="usuario-logado" id="userHeader">
+                    <i class="fa-solid fa-user" style="color: #522318;"></i>
+                    <span id="nomeUsuario"></span>
+                    <i id="logoutButton" class="fa-solid fa-arrow-right-from-bracket" onclick="logout()"></i>
+                </div>
+
+
+                <a href="login.html" class="button" id="loginButton"><span>Fazer login</span></a>
+            </div>
+        </div>
+        <nav>
+            <div class="botoes">
+                <a href="produto.html#pre-venda">Pré-Venda</a>
+                <a href="produto.html#lancamentos-page">Lançamentos</a>
+                <a href="produto.html">Produtos</a>
+                <a href="sustentabilidade.html">Sustentabilidade</a>
+
+            </div>
+        </nav>
+    </header>
+
+    <main id="sobre-nos">
+        <section>
+            <div class="container-sobreNos">
+                <div class="titulo-sobre">
+                    <img src="img-interface/Group_17-removebg-preview.png" alt="">
+                    <div class="descubra-sobre">
+                        <h2 class="titulo1">descubra mais</h2>
+                        <h2 class="titulo2">sobre nós!</h2>
+                    </div>
+                </div>
+                <div class="line-sobre"></div>
+                <div class="nossaHistoria">
+                    <h3>Nossa história</h3>
+                    <p><span> </span>Na LeNabi, nossa história inspiradora começa com a paixão por livros e o
+                        compromisso
+                        com a sustentabilidade. Fundada por um grupo de amantes da literatura que acreditam que palavras
+                        podem mudar o mundo, nossa editora nasceu com o desejo de fazer a diferença.</p>
+                    <p><span> </span>Uma história de determinação e visão, nossa missão é clara: publicar uma ampla
+                        variedade de gêneros literários enquanto protegemos o planeta. Começamos em uma pequena sala com
+                        um
+                        punhado de autores
+                        talentosos, mas nossa dedicação à qualidade e à sustentabilidade nos impulsionou a crescer.</p>
+                </div>
+                <div class="line-sobre"></div>
+                <div class="frase-sobre">
+                    <img src="img-interface/Group 17 (1).png" alt="">
+                    <p>Junte-se a nós nessa jornada literária e sustentável e seja parte da nossa história!</p>
+                </div>
+                <div class="line-sobre"></div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container-footer">
+            <nav>
+                <div class="parte1">
+                    <a href="index.html#but">Produtos</a>
+                    <a href="index.html#lancamentos">Lançamentos</a>
+                    <a href="index.html#header">Pré-venda</a>
+                </div>
+                <div class="parte2">
+                    <a href="#">Favoritos</a>
+                    <a href="sustentabilidade.html">Sustentabilidade</a>
+                    <a href="sobre-nos.html">Sobre nós</a>
+                </div>
+            </nav>
+            <div class="redes-sociais">
+                <a href=""><img src="img-interface/carbon_email.svg" alt=""></a>
+                <a href=""><img src="img-interface/uil_instagram.svg" alt=""></a>
+                <a href=""><img src="img-interface/simple-icons_x.svg" alt=""></a>
+            </div>
+            <div class="logo-footer">
+                <img src="img-interface/lenabi 1.png" alt="">
+                <h2>LeNabi</h2>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function buscarProduto() {
+            const termoDeBusca = document.getElementById("buscar").value.toLowerCase();
+            const main = document.getElementById("sobre-nos");
+            main.innerHTML = ""; // Limpa o conteúdo atual
+
+            // Realiza a busca nos elementos com a classe "livros" no arquivo "produto.html"
+            fetch("produto.html")
+                .then(response => response.text())
+                .then(data => {
+                    // Crie um elemento temporário para analisar o conteúdo do produto.html
+                    const tempElement = document.createElement("div");
+                    tempElement.innerHTML = data;
+
+                    // Encontra os elementos com a classe "livros" e verifica se o título contém o termo de busca
+                    const livros = tempElement.querySelectorAll(".livros");
+                    livros.forEach(livro => {
+                        const titulo = livro.querySelector("img").alt.toLowerCase();
+
+                        if (titulo.includes(termoDeBusca)) {
+                            main.appendChild(livro.cloneNode(true));
+                        }
+                    });
+
+                    // Adicione a classe "area-de-busca" a main para aplicar os estilos
+                    main.classList.add("area-de-busca");
+
+                    // Verifique se há filhos na área de busca
+                    if (main.children.length === 0) {
+                        main.innerHTML = 'Nenhum resultado encontrado.';
+                        main.style.display = "flex";
+                        main.style.alignItems = "center";
+                        main.style.backgroundColor = "#F8F1EE"; // Cor de fundo quando nenhum resultado é encontrado
+                    }
+                })
+                .catch(error => {
+                    console.error("Erro ao buscar produtos:", error);
+                });
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            renderizarCabecalho();
+        });
+
+        //FIM BARRA DE PESQUISA
+    </script>
+    <script src="user.js"></script>
+
+</body>
+
+</html>

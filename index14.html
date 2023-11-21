@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editora LeNabi</title>
+    <link rel="stylesheet" href="style7.css">
+    <script src="https://kit.fontawesome.com/a2288264db.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <header id="header">
+        <div class="container-fundo">
+            <div class="container">
+                <a href="index.html">
+                    <div class="logo">
+                        <img src="img produto/lenabi 1.png" alt="borboleta voando dentro de um livro">
+                        <h2>LeNabi</h2>
+                    </div>
+                </a>
+                <div class="buscar">
+                    <input type="text" id="buscar" placeholder="Buscar livro" oninput="buscarProduto()">
+                </div>
+
+                <div id="favoritos" onclick="toggleFavoritos()">
+                    <div class="imagem">
+                        <i class="fa-regular fa-heart" style="color: #522318;"></i>
+                    </div>
+                    <span id="cont-favoritos">0</span>
+                </div>
+                <div id="carrinho-itens" style="display: none;">
+                    <ul id="itens-lista"></ul>
+                    <span id="preco-total">Valor Total: R$0,00</span>
+                    <button class="car" onclick="limparCarrinho()">Limpar Carrinho</button>
+                </div>
+                <a href="login.html" class="button"><span>Fazer login</span></a>
+            </div>
+        </div>
+        <nav>
+            <div class="botoes">
+                <a href="#" id="carregarConteudo">Pré-Venda</a>
+                <a href="#" id="carregarLancamentos">Lançamentos</a>
+                <button id="loadContentButton">Produtos</button>
+                <a href="#">Sustentabilidade</a>
+
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="retangulo">
+            <div class="nome-livro8">
+                <h1 class="titulo">Hoje, Depois, Amanhã</h1>
+                <p class="autor">por <span class="nome1"> Rachel Lynn </span><span class="nome2">(Autor)</span>
+                </p>
+            </div>
+        </div>
+        <div class="produto">
+            <div class="info">
+                <div class="tudo">
+                    <div class="capa-livro">
+                        <img class="irmaos" src="img produto/hoje depois amanha.webp" alt="hoje, depois, amanhã">
+                    </div>
+                    <div class="info2">
+                        <div class="div1"></div>
+                        <p class="preco">R$19,99 <span class="desconto"> <s>R$32,10</s></span></p>
+
+                        <p class="frase-livro">O tempo dança ao ritmo das emoções.</p>
+                        <p class="sinopse">Hoje, depois, amanhã é uma comédia romântica com gostinho de sessão da tarde
+                            sobre dois alunos superinteligentes que, após passarem um dia inteiro juntos, descobrem que
+                            talvez não se odeiem tanto quanto imaginavam.</p>
+
+
+                        <div class="content">
+                            <div class="image-card">
+                                <img class="icon" src="img produto/livro icone.png" alt="livro icone">
+                                <p class="espec">514 Páginas</p>
+                            </div>
+                            <div class="image-card">
+                                <img class="icon" src="img produto/planeta icone.png" alt="planeta icone">
+                                <p class="espec">Português-BR</p>
+                            </div>
+                            <div class="image-card">
+                                <button class="produtinhos" onclick="addCarrinho('Hoje, Depois, Amanhã', 19.99)">
+                                    <img class="icon-coracao" src="img produto/coracao icone.png" alt="produto icone"
+                                        id="coracao-vazio" onclick="alternarContador()">
+                                    <img class="icon-coracaoP" src="img produto/cora-pintado.png" alt="produto icone"
+                                        id="coracao-pintado" style="display: none;" onclick="alternarContador()">
+                                </button>
+                                <p class="espec-coracao" id="contador-coracao" data-ativo="false"
+                                    data-valor-inicial="142">142</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </section>
+        <div class="compre">
+            <button id="botao-compra">Compre Já !</button>
+        </div>
+
+        <div class="detalhes-produto">
+            <div class="titulo-produto">
+                <h1 class="detalhes">Detalhes do produto</h1>
+                <div class="retangulo-div"></div>
+            </div>
+            <div class="informacao">
+                <p class="lista">Editora: <span class="info-spam">LeNabi ; 1ª edição</span></p>
+                <p class="lista">Data de publicação: <span class="info-spam">11 de junho de 2023</span></p>
+                <div class="classificacao">
+                    <p class="lista">Classificação indicativa: </p>
+                    <img class="classi" src="img produto/14anos.png" alt="classificacao 14 anos">
+                </div>
+                <p class="lista">Gênero: <span class="info-spam">Ficção</span></p>
+                <p class="lista">Tamanho do arquivo (Kindle): <span class="info-spam">2478 KB</span></p>
+                <div class="aval">
+                    <p class="lista">Avaliação do produto: <span class="info-spam">2.5</span></p>
+                    <img class="estrela-2-5" src="img produto/2.5estrelas.png" alt="Avaliação estrela">
+                </div>
+            </div>
+        </div>
+
+        <div class="reta-divisao"></div>
+        <div class="titulo-sugestao">
+            <h1 class="detalhes">Livros sugeridos para você!</h1>
+            <div class="retangulo-div2"></div>
+        </div>
+
+        <div class="realFundo">
+            <div class="fundoPre">
+
+                <div class="livros">
+                    <h2>O Ceifador</h2>
+                    <p>Neal S.</p>
+                    <a href="">
+                        <img src="img produto/o ceifador.webp" alt="o ceifador">
+                        <div class="buttonPreco">
+                            <h3>R$39,34</h3>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="livros">
+                    <h2>Daisy Jones</h2>
+                    <p> Taylor J.</p>
+                    <a href="">
+                        <img src="img produto/daisy jones.webp" alt="daisy jones">
+                        <div class="buttonPreco">
+                            <h3>R$27,99</h3>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="livros">
+                    <h2>Vol.2</h2>
+                    <p>Stephanie G.</p>
+                    <a href="">
+                        <img src="img produto/felizes para nunca.webp" alt="felizes para nunca">
+                        <div class="buttonPreco">
+                            <h3>R$43,11</h3>
+                        </div>
+                    </a>
+                </div>
+
+
+            </div>
+        </div>
+        </div>
+
+        <div class="divisao-final"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container-footer">
+            <nav>
+                <div class="parte1">
+                    <a href="#">Produtos</a>
+                    <a href="#">Lançamentos</a>
+                    <a href="#">Pré-venda</a>
+                </div>
+                <div class="parte2">
+                    <a href="#">Favoritos</a>
+                    <a href="#">Sustentabilidade</a>
+                    <a href="#">Sobre nós</a>
+                </div>
+            </nav>
+            <div class="redes-sociais">
+                <a href="mailto:editoralenabi@gmail.com" target="_blank"><img src="img-interface/carbon_email.svg"
+                        alt=""></a>
+                <a href="https://www.instagram.com/editoralenabi/?igshid=YTQwZjQ0NmI0OA%3D%3D" target="_blank"><img
+                        src="img-interface/uil_instagram.svg" alt=""></a>
+                <a href="https://x.com/LeNabiEditora?t=-ry8Op0ZSihvYuzXTeuZ8w&s=09" target="_blank"><img
+                        src="img-interface/simple-icons_x.svg" alt=""></a>
+            </div>
+            <div class="logo-footer">
+                <img src="img produto/lenabi 1.png" alt="">
+                <h2>LeNabi</h2>
+            </div>
+        </div>
+    </footer>
+    <script src="user.js"></script>
+
+</body>
+
+</html>

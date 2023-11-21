@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a2288264db.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="img-interface/lenabi 1.png" type="image/x-icon">
+    <link rel="stylesheet" href="produto.css">
+
+    <title>LeNabi - Sustentabilidade</title>
+</head>
+
+<body>
+    <header id="header">
+        <div class="container-fundo">
+            <div class="container">
+                <a href="index.html">
+                    <div class="logo">
+                        <img src="img-interface/lenabi 1.png" alt="borboleta voando dentro de um livro">
+                        <h2>LeNabi</h2>
+                    </div>
+                </a>
+                <div class="buscar">
+                    <input type="text" id="buscar" placeholder="Buscar livro" oninput="buscarProduto()">
+                </div>
+
+                <div id="favoritos" onclick="toggleFavoritos()">
+                    <div class="imagem">
+                        <i class="fa-regular fa-heart" style="color: #522318;"></i>
+                    </div>
+                    <span id="cont-favoritos">0</span>
+                </div>
+                <!-- Dentro da div do usuário logado -->
+                <div class="usuario-logado" id="userHeader">
+                    <i class="fa-solid fa-user" style="color: #522318;"></i>
+                    <span id="nomeUsuario"></span>
+                    <i id="logoutButton" class="fa-solid fa-arrow-right-from-bracket" onclick="logout()"></i>
+                </div>
+
+
+                <a href="login.html" class="button" id="loginButton"><span>Fazer login</span></a>
+            </div>
+        </div>
+        <nav>
+            <div class="botoes">
+                <a href="produto.html#pre-venda">Pré-Venda</a>
+                <a href="produto.html#lancamentos-page">Lançamentos</a>
+                <a href="produto.html">Produtos</a>
+                <a href="sustentabilidade.html">Sustentabilidade</a>
+
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-sus">
+        <div class="center-sus">
+            <div class="stack-area-sus">
+                <div class="left-sus">
+                    <div class="titulo-sus">Sustentável!</div>
+                    <div class="sub-titulo-sus">
+                        Nosso site é dedicado à sustentabilidade em livros. Somos uma editora comprometida em oferecer
+                        livros com folhas recicláveis, promovendo uma leitura consciente em harmonia com o meio
+                        ambiente.
+                    </div>
+                </div>
+                <div class="right-sus">
+                    <div class="cards-sus">
+                        <div class="card-sus">
+                            <div class="sub-sus">Qualidade</div>
+                            <div class="content-sus">Livros com materiais excelentes</div>
+                        </div>
+                        <div class="card-sus">
+                            <div class="sub-sus">Inovação</div>
+                            <div class="content-sus">Moderno e criativo</div>
+                        </div>
+                        <div class="card-sus">
+                            <div class="sub-sus">Sustentável</div>
+                            <div class="content-sus">Folhas biodegradáveis</div>
+                        </div>
+                        <div class="card-sus">
+                            <div class="sub-sus">Essencial</div>
+                            <div class="content-sus">Mantenha a leitura em dia</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="linha-sus"></div>
+        </div>
+        <div class="saibaProjeto">
+            <div class="conteudo-sus">
+                <h1>saiba mais do <span>projeto!</span></h1>
+                <div class="biodegradaveis">
+                    <img src="img-interface/biodegradaveis.png" alt="vaso com planta">
+                    <div class="biodegradavel-texto">
+                        <h2>Nossas folhas biodegradáveis!</h2>
+                        <p>Cada página é uma história eco-friendly. Nossos livros são impressos em folhas
+                            biodegradáveis, unindo leitura apaixonante e cuidado com o meio ambiente. Descubra a
+                            magia das palavras enquanto faz a diferença para o planeta. </p>
+                    </div>
+                </div>
+                <div class="planeta">
+                    <div class="planeta-texto">
+                        <h2>Ajude o planeta conosco!</h2>
+                        <p>Junte-se a nossa missão de promover a sustentabilidade e conscientização ambiental
+                            através de nossas publicações. Escolhendo nossos materiais, você ajuda a construir um
+                            futuro mais verde e saudável. Faça parte desta jornada sustentável! </p>
+                    </div>
+                    <img src="img-interface/planeta.png" alt="folha">
+                </div>
+            </div>
+            <div class="linha-sus-dois"></div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container-footer">
+            <nav>
+                <div class="parte1">
+                    <a href="index.html#but">Produtos</a>
+                    <a href="index.html#lancamentos">Lançamentos</a>
+                    <a href="index.html#header">Pré-venda</a>
+                </div>
+                <div class="parte2">
+                    <a href="#">Favoritos</a>
+                    <a href="sustentabilidade.html">Sustentabilidade</a>
+                    <a href="sobre-nos.html">Sobre nós</a>
+                </div>
+            </nav>
+            <div class="redes-sociais">
+                <a href="mailto:editoralenabi@gmail.com" target="_blank"><img src="img-interface/carbon_email.svg"
+                        alt=""></a>
+                <a href="https://www.instagram.com/editoralenabi/?igshid=YTQwZjQ0NmI0OA%3D%3D" target="_blank"><img
+                        src="img-interface/uil_instagram.svg" alt=""></a>
+                <a href="https://x.com/LeNabiEditora?t=-ry8Op0ZSihvYuzXTeuZ8w&s=09" target="_blank"><img
+                        src="img-interface/simple-icons_x.svg" alt=""></a>
+            </div>
+            <div class="logo-footer">
+                <img src="img-interface/lenabi 1.png" alt="">
+                <h2>LeNabi</h2>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let cardsSus = document.querySelectorAll(".card-sus");
+        let stackAreaSus = document.querySelector(".stack-area-sus");
+
+        function rotateCardsSus() {
+            let angle = 0;
+            cardsSus.forEach((card) => {
+                if (card.classList.contains("active")) {
+                    card.style.transform = `translate(-50%, -120vh) rotate(-48deg)`;
+                } else {
+                    card.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
+                    angle = angle - 10;
+                }
+            });
+        }
+
+        rotateCardsSus();
+
+        window.addEventListener("scroll", () => {
+            let proportion = stackAreaSus.getBoundingClientRect().top / window.innerHeight;
+            if (proportion <= 0) {
+                let n = cardsSus.length;
+                let index = Math.ceil((proportion * n) / 2)
+                index = Math.abs(index) - 1;
+                for (let i = 0; i < n; i++) {
+                    if (i <= index) {
+                        cardsSus[i].classList.add("active")
+                    } else {
+                        cardsSus[i].classList.remove("active")
+                    }
+                }
+                rotateCardsSus()
+            }
+        })
+
+        //barra de pesquisa
+        function buscarProduto() {
+            const termoDeBusca = document.getElementById("buscar").value.toLowerCase();
+            const main = document.getElementById("main-sus");
+            main.innerHTML = ""; // Limpa o conteúdo atual
+
+            // Realiza a busca nos elementos com a classe "livros" no arquivo "produto.html"
+            fetch("produto.html")
+                .then(response => response.text())
+                .then(data => {
+                    // Crie um elemento temporário para analisar o conteúdo do produto.html
+                    const tempElement = document.createElement("div");
+                    tempElement.innerHTML = data;
+
+                    // Encontra os elementos com a classe "livros" e verifica se o título contém o termo de busca
+                    const livros = tempElement.querySelectorAll(".livros");
+                    livros.forEach(livro => {
+                        const titulo = livro.querySelector("img").alt.toLowerCase();
+
+                        if (titulo.includes(termoDeBusca)) {
+                            main.appendChild(livro.cloneNode(true));
+                        }
+                    });
+
+                    // Adicione a classe "area-de-busca" a main para aplicar os estilos
+                    main.classList.add("area-de-busca");
+
+                    // Verifique se há filhos na área de busca
+                    if (main.children.length === 0) {
+                        main.innerHTML = 'Nenhum resultado encontrado.';
+                        main.style.display = "flex";
+                        main.style.alignItems = "center";
+                        main.style.backgroundColor = "#F8F1EE"; // Cor de fundo quando nenhum resultado é encontrado
+                    }
+                })
+                .catch(error => {
+                    console.error("Erro ao buscar produtos:", error);
+                });
+        }
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            renderizarCabecalho();
+        });
+
+    </script>
+
+    <script src="user.js"></script>
+
+
+</body>
+
+</html>

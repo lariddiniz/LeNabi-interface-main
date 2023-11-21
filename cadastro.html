@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeNabi - Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a2288264db.js" crossorigin="anonymous"></script>
+</head>
+
+<body id="cadastro-page">
+    <header id="header-login">
+        <div class="container container-login">
+            <a href="index.html">
+                <div class="logo">
+                    <img src="img-interface/lenabi 1.png" alt="borboleta voando dentro de um livro">
+                    <h2>LeNabi</h2>
+                </div>
+            </a>
+
+            <div id="favoritos" class="favoritos-login" onclick="toggleFavoritos()">
+                <div class="imagem">
+                    <i class="fa-regular fa-heart" style="color: #522318;"></i>
+                </div>
+                <span id="cont-favoritos">0</span>
+            </div>
+            <a href="login.html" class="button"><span>Fazer login</span></a>
+        </div>
+        <nav>
+            <div class="botoes botoes-login"></div>
+        </nav>
+    </header>
+    <main>
+        <div class="box">
+            <div class="conteudo-login">
+                <div class="titulo">
+                    <h3><span>Novo por aqui?</span><br>Bem-vindo!</h3>
+                    <div class="linha-titulo"></div>
+                </div>
+                <div class="campo">
+                    <div class="nome">
+                        <img class="pencil" src="img-interface/Group 12.svg" alt="">
+                        <div class="linha-nome"></div>
+                        <input type="text" placeholder="Nome" required>
+                    </div>
+                    <div class="email">
+                        <i class="fa-solid fa-envelope" style="color: #522318"></i>
+                        <div class="linha-email"></div>
+                        <input type="email" placeholder="E-mail" required>
+                    </div>
+                    <div class="telefone">
+                        <i class="fa-solid fa-phone" style="color: #522318"></i>
+                        <div class="linha-tel"></div>
+                        <input type="number" placeholder="Telefone" required>
+                    </div>
+                    <div class="usuario">
+                        <i class="fa fa-user" style="color: #522318"></i>
+                        <div class="linha-input"></div>
+                        <input type="text" placeholder="Usuário" required>
+                    </div>
+                    <div class="senha">
+                        <i class="fa-solid fa-key" style="color: #522318" id="iconSenha"></i>
+                        <div class="linha-senha"></div>
+                        <i class="fa-regular fa-eye-slash" style="color: #835248" id="iconOlho"></i>
+                        <input type="password" placeholder="Senha" required id="senhaInput">
+                    </div>
+
+                </div>
+                <div class="outros-registros">
+                    <button id="registrarButton">Registrar</button>
+                    <p>Já tem conta? <a href="login.html"><span>Entre!</span></a></p>
+                </div>
+                <div class="login-sociais">
+                    <div class="linha-sociais"></div>
+                    <p>ou</p>
+
+                    <div class="linha-icons"></div>
+                    <div class="linha-icons2"></div>
+                    <div class="icons">
+                        <img src="img-interface/Group 9.svg" alt="">
+                        <img src="img-interface/Group 10.svg" alt="">
+                        <img src="img-interface/Group 11.svg" alt="">
+                    </div>
+
+                </div>
+            </div>
+            <img class="img-cadastro" src="img-interface/unsplash__nm_mZ4Cs2I.png" alt="">
+        </div>
+
+    </main>
+    <footer>
+        <div class="container-footer">
+            <nav>
+                <div class="parte1">
+                    <a href="#">Produtos</a>
+                    <a href="#">Lançamentos</a>
+                    <a href="#">Pré-venda</a>
+                </div>
+                <div class="parte2">
+                    <a href="#">Favoritos</a>
+                    <a href="#">Sustentabilidade</a>
+                    <a href="#" id="sobre-nosButton">Sobre nós</a>
+                </div>
+            </nav>
+            <div class="redes-sociais">
+                <a href=""><img src="img-interface/carbon_email.svg" alt=""></a>
+                <a href=""><img src="img-interface/uil_instagram.svg" alt=""></a>
+                <a href=""><img src="img-interface/simple-icons_x.svg" alt=""></a>
+            </div>
+            <div class="logo-footer">
+                <img src="img-interface/lenabi 1.png" alt="">
+                <h2>LeNabi</h2>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // const iconOlho = document.getElementById("iconOlho");
+        // const senhaInput = document.getElementById("senhaInput");
+        // const inputs = document.querySelectorAll('input[required]');
+
+        // // Adicionar um ouvinte de evento ao ícone de olho
+        // iconOlho.addEventListener("click", () => {
+        //     if (senhaInput.type === "password") {
+        //         // Alterar o ícone e o tipo de entrada para "text"
+        //         senhaInput.type = "text";
+        //         iconOlho.classList.remove("fa-regular");
+        //         iconOlho.classList.remove("fa-eye-slash");
+        //         iconOlho.classList.add("fa-solid");
+        //         iconOlho.classList.add("fa-eye");
+        //     } else {// Reverter o ícone e o tipo de entrada para "password"
+        //         senhaInput.type = "password";
+        //         iconOlho.classList.remove("fa-solid");
+        //         iconOlho.classList.remove("fa-eye");
+        //         iconOlho.classList.add("fa-regular");
+        //         iconOlho.classList.add("fa-eye-slash");
+        //     }
+        // });
+
+        // // Adicionar um ouvinte de evento ao botão de registro
+        // registrarButton.addEventListener("click", () => {
+        //     let camposVazios = false;
+
+        //     inputs.forEach(input => {
+        //         if (input.value.trim() === '') {
+        //             camposVazios = true;
+        //         }
+        //     }); if (camposVazios) {
+        //         alert("Preencha todos os campos obrigatórios.");
+        //     } else {
+        //         alert("Cadastro bem-sucedido!");
+        //         window.location.href = "index.html";
+        //     }
+        // });
+
+        document.addEventListener('DOMContentLoaded', function () {
+        const iconOlho = document.getElementById("iconOlho");
+        const senhaInput = document.getElementById("senhaInput");
+        const loginButton = document.getElementById("loginButton");
+        const userInput = document.getElementById("userInput");
+
+        iconOlho.addEventListener("click", () => {
+            if (senhaInput.type === "password") {
+                senhaInput.type = "text";
+                // Adicionar código para alterar o ícone do olho conforme necessário
+                iconOlho.classList.remove("fa-regular");
+                iconOlho.classList.remove("fa-eye-slash");
+                iconOlho.classList.add("fa-solid");
+                iconOlho.classList.add("fa-eye");
+            } else {
+                senhaInput.type = "password";
+                // Adicionar código para reverter o ícone do olho conforme necessário
+                iconOlho.classList.remove("fa-solid");
+                iconOlho.classList.remove("fa-eye");
+                iconOlho.classList.add("fa-regular");
+                iconOlho.classList.add("fa-eye-slash");
+            }
+        });
+
+        registrarButton.addEventListener("click", () => {
+            const nome = document.querySelector('.nome input').value;
+            const email = document.querySelector('.email input').value;
+            const telefone = document.querySelector('.telefone input').value;
+            const usuario = document.querySelector('.usuario input').value;
+            const senha = document.querySelector('.senha input').value;
+
+            const userData = {
+                nome: nome,
+                email: email,
+                telefone: telefone,
+                userInput: usuario,
+                senhaInput: senha
+            };
+
+            localStorage.setItem('userData', JSON.stringify(userData));
+            alert("Cadastro bem-sucedido!");
+            window.location.href = "index.html";
+        });
+    });
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="produto.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a2288264db.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        main#conteudo.original.area-de-busca {
+            margin-top: 72px;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <div class="container-fundo">
+            <div class="container">
+                <a href="index.html">
+                    <div class="logo">
+                        <img src="img-interface/lenabi 1.png" alt="borboleta voando dentro de um livro">
+                        <h2>LeNabi</h2>
+                    </div>
+                </a>
+                <div class="buscar">
+                    <input type="text" id="buscar" placeholder="Buscar livro" oninput="buscarProduto()">
+                </div>
+
+                <div id="favoritos" onclick="toggleFavoritos()">
+                    <div class="imagem">
+                        <i class="fa-regular fa-heart" style="color: #522318;"></i>
+                    </div>
+                    <span id="cont-favoritos">0</span>
+                </div>
+                <!-- Dentro da div do usuário logado -->
+                <div class="usuario-logado" id="userHeader">
+                    <i class="fa-solid fa-user" style="color: #522318;"></i>
+                    <span id="nomeUsuario"></span>
+                    <i id="logoutButton" class="fa-solid fa-arrow-right-from-bracket" onclick="logout()"></i>
+                </div>
+
+
+                <a href="login.html" class="button" id="loginButton"><span>Fazer login</span></a>
+            </div>
+        </div>
+        <nav>
+            <div class="botoes">
+                <a href="produto.html#pre-venda">Pré-Venda</a>
+                <a href="produto.html#lancamentos-page">Lançamentos</a>
+                <a href="produto.html">Produtos</a>
+                <a href="sustentabilidade.html">Sustentabilidade</a>
+
+            </div>
+        </nav>
+    </header>
+    <main id="conteudo" class="original">
+        <section>
+            <div class="setor1Produto">
+                <h1>Confira nossos produtos!</h1>
+                <div class="topicos">
+                    <div class="iconeFolha">
+                        <div class="cuboMarrom">
+                            <img src="img-interface/lucide_leaf.svg" alt="">
+                        </div>
+                        <p>Nossos livros são impressos em folhas recicláveis, promovendo a sustentabilidade e o respeito
+                            ao
+                            meio ambiente.
+                        </p>
+                    </div>
+                    <div class="iconeAmazon">
+                        <div class="cubo2Marrom">
+                            <img src="img-interface/ri_amazon-line.svg" alt="">
+                        </div>
+                        <p>Parceria com a Amazon: Entregas rápidas e convenientes para seus livros favoritos. Juntos,
+                            tornamos a leitura mais acessível e prazerosa.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="linha1Produto"></div>
+        </section>
+
+        <section id="pre-venda">
+            <div class="prevenda">
+                <div class="titulo-pre">
+                    <h1>Pré-venda</h1>
+                    <p>Garanta acesso antecipado aos produtos mais inovadores em nossa página de <br> pré-vendas e
+                        esteja à
+                        frente do jogo!
+                    </p>
+                </div>
+                <div class="realFundo">
+                    <div class="fundoPre">
+
+                        <div class="livros">
+                            <h2>Vol.1</h2>
+                            <p>Stephanie G.</p>
+                            <a href="index13.html">
+                                <img src="img-interface/coração partido.webp" alt="era uma vez um coração partido">
+                                <div class="buttonPreco">
+                                    <h3>R$44,90</h3>
+                                </div>
+                            </a>
+                        </div>
+
+
+                        <div class="livros">
+                            <h2>Vol.2</h2>
+                            <p>Stephanie G.</p>
+                            <a href="index18.html">
+                                <img src="img-interface/felizes para nunca.webp" alt="a balada dos felizes para nunca">
+                                <div class="buttonPreco">
+                                    <h3>R$43,11</h3>
+                                </div>
+                            </a>
+                        </div>
+
+
+                        <div class="livros">
+                            <h2>Vol.3</h2>
+                            <p>Stephanie G.</p>
+                            <a href="index17.html">
+                                <img src="img-interface/maldição do amor.webp" alt="a maldição do verdadeiro amor">
+                                <div class="buttonPreco">
+                                    <h3>R$64,90</h3>
+                                </div>
+                            </a>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <div id="paradaUm" class="linha1Produto l-dois"></div>
+        </section>
+        <section id="lancamentos-page">
+            <div class="prevenda">
+                <div class="titulo-pre">
+                    <h1>Lançamentos</h1>
+                    <p>Descubra os lançamentos literários mais emocionantes em nossa página e mergulhe em novas
+                        narrativas
+                        empolgantes.
+                    </p>
+                </div>
+                <div class="realFundo">
+                    <div class="fundoPre">
+
+                        <div class="livros">
+                            <h2>O morro dos...</h2>
+                            <p>Emily Brontë</p>
+                            <a href="index15.html">
+                                <img src="img-interface/ventos uivantes.webp" alt="O morro dos ventos uivantes">
+                                <div class="buttonPreco">
+                                    <h3>R$41,99</h3>
+                                </div>
+                            </a>
+                        </div>
+
+
+                        <div class="livros">
+                            <h2>Hoje, depois...</h2>
+                            <p>Rachel L. S.</p>
+                            <a href="index14.html">
+                                <img src="img-interface/hoje depois amanha.webp" alt="hoje, depois, amanha">
+                                <div class="buttonPreco">
+                                    <h3>R$39,99</h3>
+                                </div>
+                            </a>
+                        </div>
+
+
+                        <div class="livros">
+                            <h2>Os irmãos...</h2>
+                            <p>Jennifer L. B.</p>
+                            <a href="index7.html">
+                                <img src="img-interface/irmaos Hawthorne.webp" alt="Os irmaos Hawthorne">
+                                <div class="buttonPreco preco2">
+                                    <h3>R$47,92</h3>
+                                </div>
+                            </a>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="linha1Produto l-dois"></div>
+        </section>
+        <section id="produtos-page">
+            <div class="prevenda">
+                <div class="titulo-pre">
+                    <h1>Produtos</h1>
+                    <p>Explore nossa variedade de livros de alta qualidade. Encontre histórias cativantes, conhecimento
+                        inspirador e muito mais.
+                    </p>
+                </div>
+                <div class="realFundo">
+                    <div class="fundoPre">
+
+                        <div class="livros">
+                            <h2>A cabana</h2>
+                            <p>William P. Y.</p>
+                            <a href="index8.html">
+                                <img src="img-interface/a cabana.jpg" alt="a cabana">
+                                <div class="buttonPreco">
+                                    <h3>R$43,99</h3>
+                                </div>
+                            </a>
+                        </div>
+
+
+                        <div class="livros">
+                            <h2>O ceifador</h2>
+                            <p>Neal S.</p>
+                            <a href="index11.html">
+                                <img src="img-interface/o ceifador.jpg" alt="o ceifador">
+                                <div class="buttonPreco">
+                                    <h3>R$39,34</h3>
+                                </div>
+                            </a>
+                        </div>
+
+
+                        <div class="livros">
+                            <h2>Daisy Jones...</h2>
+                            <p>Taylor J. R.</p>
+                            <a href="index16.html">
+                                <img src="img-interface/daisy jones.jpg"
+                                    alt="Daisy Jones & The Six: Uma História de Amor e Música">
+                                <div class="buttonPreco">
+                                    <h3>R$27,99</h3>
+                                </div>
+                            </a>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="realFundo2">
+                    <div class="fundoPre">
+
+                        <div class="livros livros2">
+                            <h2>Jogo fatal</h2>
+                            <p>Holly J.</p>
+                            <a href="index10.html">
+                                <img src="img-interface/jogo fatal.webp" alt="jogo fatal">
+                                <div class="buttonPreco">
+                                    <h3>R$34,90</h3>
+                                </div>
+                            </a>
+                        </div>
+
+
+                        <div class="livros livros2">
+                            <h2>A biblioteca...</h2>
+                            <p>Matt Haig</p>
+                            <a href="index9.html">
+                                <img src="img-interface/biblioteca meia noite.jpg" alt="a biblioteca da meia-noite">
+                                <div class="buttonPreco">
+                                    <h3>R$42,00</h3>
+                                </div>
+                            </a>
+                        </div>
+
+
+                        <div class="livros livros2">
+                            <h2>Percy Jackson...</h2>
+                            <p>Rick Riordan</p>
+                            <a href="index12.html">
+                                <img src="img-interface/ladrao de raios.jpg"
+                                    alt=" percy jackson e os olimpianos- o ladão de raios">
+                                <div class="buttonPreco">
+                                    <h3>R$50,90</h3>
+                                </div>
+                            </a>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="linha1Produto l-tres"></div>
+        </section>
+    </main>
+    <footer>
+        <div class="container-footer">
+            <nav>
+                <div class="parte1">
+                    <a href="index.html#but">Produtos</a>
+                    <a href="index.html#lancamentos">Lançamentos</a>
+                    <a href="index.html#header">Pré-venda</a>
+                </div>
+                <div class="parte2">
+                    <a href="#">Favoritos</a>
+                    <a href="sustentabilidade.html">Sustentabilidade</a>
+                    <a href="sobre-nos.html">Sobre nós</a>
+                </div>
+            </nav>
+            <div class="redes-sociais">
+                <a href="mailto:editoralenabi@gmail.com" target="_blank"><img src="img-interface/carbon_email.svg"
+                        alt=""></a>
+                <a href="https://www.instagram.com/editoralenabi/?igshid=YTQwZjQ0NmI0OA%3D%3D" target="_blank"><img
+                        src="img-interface/uil_instagram.svg" alt=""></a>
+                <a href="https://x.com/LeNabiEditora?t=-ry8Op0ZSihvYuzXTeuZ8w&s=09" target="_blank"><img
+                        src="img-interface/simple-icons_x.svg" alt=""></a>
+            </div>
+            <div class="logo-footer">
+                <img src="img-interface/lenabi 1.png" alt="">
+                <h2>LeNabi</h2>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function buscarProduto() {
+            const termoDeBusca = document.getElementById("buscar").value.toLowerCase();
+            const main = document.getElementById("conteudo");
+            main.innerHTML = ""; // Limpa o conteúdo atual
+
+            // Realiza a busca nos elementos com a classe "livros" no arquivo "produto.html"
+            fetch("produto copy.html")
+                .then(response => response.text())
+                .then(data => {
+                    // Crie um elemento temporário para analisar o conteúdo do produto.html
+                    const tempElement = document.createElement("div");
+                    tempElement.innerHTML = data;
+
+                    // Encontra os elementos com a classe "livros" e verifica se o título contém o termo de busca
+                    const livros = tempElement.querySelectorAll(".livros");
+                    livros.forEach(livro => {
+                        const titulo = livro.querySelector("img").alt.toLowerCase();
+
+                        if (titulo.includes(termoDeBusca)) {
+                            main.appendChild(livro.cloneNode(true));
+                        }
+                    });
+
+                    // Adicione a classe "area-de-busca" a main para aplicar os estilos
+                    main.classList.add("area-de-busca");
+
+                    // Verifique se há filhos na área de busca
+                    if (main.children.length === 0) {
+                        main.innerHTML = 'Nenhum resultado encontrado.';
+                        main.style.display = "flex";
+                        main.style.alignItems = "center";
+                        main.style.backgroundColor = "#F8F1EE"; // Cor de fundo quando nenhum resultado é encontrado
+                    }
+                })
+                .catch(error => {
+                    console.error("Erro ao buscar produtos:", error);
+                });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            renderizarCabecalho();
+        });
+    </script>
+
+<script src="user.js"></script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,828 @@
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #F8F1EE;
+}
+
+@font-face {
+  font-family: 'Young-serif';
+  src: url(font/YoungSerif-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Poppins-regular';
+  src: url(font/Poppins-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Poppins-Semi';
+  src: url(font/Poppins-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: 'Poppins-medium';
+  src: url(font/Poppins-Medium.ttf);
+}
+
+@font-face {
+  font-family: 'Poppins-bold';
+  src: url(font/Poppins-Bold.ttf);
+}
+
+/* INICIO HEADER */
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 137px;
+}
+
+.logo h2 {
+  color: #3C2520;
+  padding-left: 15px;
+  font-family: 'Young-serif';
+  font-size: 31.56px;
+  /* font: 500 'Young-serif' 31.56px; */
+}
+
+#header,
+#header-login {
+  background-color: #B99B8D;
+  height: 127px;
+
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 94px;
+  background-color: #B99B8D;
+}
+
+.container-fundo {
+  width: 100%;
+  position: fixed;
+  background-color: #B99B8D;
+  z-index: 1000;
+}
+
+#header nav {
+  width: 100%;
+  position: relative;
+  padding-top: 120px;
+}
+
+
+
+
+a {
+  text-decoration: none;
+}
+
+.botoes {
+  display: flex;
+  background-color: #3C2520;
+  height: 52px;
+  align-items: center;
+  justify-content: space-evenly;
+  z-index: 1050;
+  /* Ajuste o valor conforme necessário */
+}
+
+.botoes a,
+.botoes button {
+  color: white;
+  font-family: 'Poppins-regular';
+  font-size: 17px;
+}
+
+.botoes button {
+  background-color: #3C2520;
+  cursor: pointer;
+}
+
+#buscar {
+  padding: 13px 15px;
+  background-color: #3C2520;
+  border-radius: 30px;
+  width: 581px;
+  color: white;
+  font-family: 'Poppins-regular';
+  font-size: 15px;
+  cursor: pointer;
+}
+
+#buscar:hover {
+  background-color: #6D5448;
+}
+
+input::placeholder {
+  color: #F8F1EE;
+  font-family: 'Poppins-regular';
+
+}
+
+.fa-regular {
+  font-size: 31px;
+  color: #3C2520;
+}
+
+.button {
+  text-decoration: none;
+  border: 3px #3C2520 solid;
+  padding: 10px 17px;
+  color: #3C2520;
+  border-radius: 11px;
+  font-family: 'Young-serif';
+  font-size: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.button span {
+  position: relative;
+}
+
+.button::before {
+  content: '';
+  background-color: #3C2520;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width .5s, height .5s;
+}
+
+.button:hover::before {
+  width: 1000px;
+  height: 1000px;
+}
+
+.button:hover span {
+  color: #F8F1EE;
+}
+
+#favoritos {
+  display: flex;
+  align-items: baseline;
+}
+
+#cont-favoritos {
+  text-align: center;
+  font-family: 'Poppins-regular';
+  color: #3C2520;
+}
+
+#carrinho-itens {
+  position: absolute;
+  left: 72%;
+  top: 14.8%;
+  height: 250px;
+  width: 400px;
+  padding-top: 10px;
+  background-color: #3C2520;
+  padding: 18px 30px;
+  border-radius: 15px;
+  /* transition: 1s linear; */
+  animation: descer 0.6s;
+  box-shadow: 2px 5px 4px #3c25208d;
+  top: 87px;
+}
+
+.item {
+  /* margin-top: 15px; */
+  font-family: 'Poppins-regular';
+  color: #fff;
+  font-weight: 200;
+}
+
+::marker {
+  color: #fff;
+}
+
+.remove {
+  background-color: #6D5448;
+  padding: 2px 14px;
+  border-radius: 12px;
+  color: #FFEFDF;
+  margin: 5px 5px;
+  font-family: 'Poppins-regular';
+  font-weight: 600;
+}
+
+.add {
+  background-color: #6D5448;
+  padding: 2px 14px;
+  border-radius: 12px;
+  margin: 5px 5px;
+  color: #FFEFDF;
+  font-family: 'Poppins-regular';
+  font-weight: 600;
+}
+
+.car {
+  padding: 10px 116px;
+  border-radius: 18px;
+  color: #fff;
+  font-family: 'Poppins-regular';
+  background-color: #710505;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.car:hover {
+  background-color: #ca0202;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+}
+
+.preco-total {
+  font-family: 'Poppins-Semi';
+  color: #fff;
+  /* width: 10px; */
+  font-size: 22px;
+}
+
+#preco-total {
+  margin-top: 5px;
+  display: flex;
+  font-family: 'Poppins-regular';
+  color: #fff;
+  font-weight: 200;
+}
+
+@keyframes descer {
+  0% {
+    opacity: 25%;
+    transform: translateY(-30px);
+  }
+
+  100% {
+    opacity: 100%;
+    transform: translateY(0);
+  }
+}
+
+/* FIM HEADER */
+
+.retangulo {
+  background-color: #6D5448;
+  width: auto;
+  height: 130px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 400px;
+  margin-top: 100px;
+}
+
+.nome-livro {
+  color: #F8F1EE;
+  margin-right: 68px;
+}
+
+.nome-livro2 {
+  color: #F8F1EE;
+  margin-right: 100px;
+}
+
+.nome-livro3 {
+  color: #F8F1EE;
+  margin-right: 15px;
+}
+
+.nome-livro4 {
+  color: #F8F1EE;
+  margin-right: 170px;
+}
+
+.nome-livro5 {
+  color: #F8F1EE;
+  margin-right: 130px;
+}
+
+.nome-livro7 {
+  color: #F8F1EE;
+  margin-right: -9%;
+}
+
+.nome-livro8 {
+  color: #F8F1EE;
+  margin-right: 6%;
+}
+
+.nome-livro9 {
+  color: #F8F1EE;
+  margin-right: -3%;
+}
+
+.nome-livro10 {
+  color: #F8F1EE;
+  margin-right: 6%;
+}
+
+.nome-livro11 {
+  color: #F8F1EE;
+  margin-right: -7%;
+}
+
+.nome-livro12 {
+  color: #F8F1EE;
+  margin-right: -7%;
+}
+
+.titulo {
+  font-size: 30px;
+}
+
+.titulo,
+.nome1 {
+  font-family: 'Young-serif';
+}
+
+.nome2 {
+  font-style: italic;
+  font-family: 'Poppins-regular';
+}
+
+.autor {
+  font-family: 'Poppins-regular';
+}
+
+.nome1 {
+  font-size: 20px;
+}
+
+.irmaos {
+  width: 330px;
+  height: 440px;
+  transition: transform 0.3s;
+  margin-top: -120px;
+  margin-right: 60px;
+  border-radius: 10px;
+}
+
+.irmaos:hover {
+  transform: scale(1.1);
+}
+
+.div1 {
+  width: 480px;
+  height: 3px;
+  background-color: #3C2520;
+  margin-top: 10px;
+}
+
+.preco {
+  font-size: 22px;
+  color: #522318;
+  font-family: 'Poppins-Semi';
+}
+
+.desconto {
+  color: #B99B8D;
+  font-size: 20px;
+}
+
+.frase-livro {
+  font-style: italic;
+  font-family: 'Poppins-regular';
+  color: #522318;
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+.sinopse {
+  font-family: 'Poppins-regular';
+  color: #522318;
+  font-size: 17px;
+  margin-top: 15px;
+  text-align: justify;
+  width: 470px;
+}
+
+.image-card {
+  display: inline-block;
+  margin: 40px;
+  text-align: center;
+}
+
+.image-card img {
+  max-width: 100%;
+}
+
+.image-card p {
+  font-family: 'Poppins-regular';
+  color: #522318;
+  font-size: 13px;
+}
+
+.icon {
+  width: 33px;
+  height: 33px;
+  font-size: 10px;
+}
+
+.icon-coracao {
+  width: 33px;
+  height: 33px;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.content {
+  margin-left: 5px;
+  font-size: 10px;
+}
+
+#botao-compra {
+  width: 882px;
+  margin-top: 35px;
+  background-color: #3C2520;
+  color: white;
+  height: 53px;
+  border-radius: 17px;
+  font-family: 'Young-serif';
+  font-size: 20px;
+  margin-left: 34px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#botao-compra:hover {
+  background-color: #A27F77;
+  color: #3C2520;
+}
+
+.compre {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.titulo-produto {
+  margin-top: 30px;
+  display: flex;
+}
+
+.retangulo-div {
+  background-color: #3C2520;
+  width: 670px;
+  height: 3px;
+  margin-top: 65px;
+  margin-left: 30px;
+}
+
+.detalhes {
+  font-family: 'Young-serif';
+  font-size: 30px;
+  margin-left: 274px;
+  margin-top: 45px;
+}
+
+.detalhes-produto {
+  margin-top: 30px;
+}
+
+.lista {
+  font-family: 'Young-serif';
+  line-height: 45px;
+  font-size: 20px;
+}
+
+.info-spam {
+  font-family: 'Poppins-regular';
+  font-size: 18px;
+}
+
+.informacao {
+  margin-top: 27px;
+  margin-left: 273px;
+}
+
+.reta-divisao {
+  background-color: #3C2520;
+  width: 1036px;
+  height: 15px;
+  border-radius: 25px;
+  margin: 0 auto;
+  margin-top: 48px;
+}
+
+.retangulo-div2 {
+  background-color: #3C2520;
+  width: 537px;
+  height: 3px;
+  margin-top: 65px;
+  margin-left: 30px;
+}
+
+.titulo-sugestao {
+  display: flex;
+}
+
+.jogo1 {
+  width: 170px;
+  height: 230px;
+  margin: auto;
+  border-right: 10px solid #B99B8D;
+  border-bottom: 10px solid #B99B8D;
+}
+
+.titulo-sug {
+  font-family: 'Young-serif';
+  font-size: 20px;
+}
+
+.escritor {
+  font-family: 'Poppins-regular';
+}
+
+.jogo1::before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 100%;
+  background-color: #d2a078;
+  right: 0;
+  bottom: 0;
+}
+
+.tudo {
+  display: flex;
+  justify-content: center;
+}
+
+.divisao-final {
+  background-color: #3C2520;
+  width: 1050px;
+  height: 3px;
+  margin: 0 auto;
+  margin-top: 90px;
+}
+
+.info2 {
+  left: 50px;
+}
+
+/* INICIO FOOTER */
+
+footer {
+  background-color: #3C2520;
+}
+
+#footer {
+  margin-top: 100px;
+}
+
+.container-footer,
+.parte1,
+.part2,
+.logo-footer {
+  display: flex;
+}
+
+.container-footer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 4% 6%;
+  margin-top: 90px;
+}
+
+.container-footer nav {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  font-family: 'Young-serif';
+  font-size: 22px;
+
+}
+
+.container-footer nav a {
+  margin: 12px 19px;
+  color: #E3CFBC;
+}
+
+.redes-sociais {
+  display: grid;
+  justify-items: center;
+}
+
+.redes-sociais img {
+  margin: 15px 0;
+}
+
+.logo-footer {
+  display: flex;
+  align-items: center;
+}
+
+.logo-footer img {
+  width: 137px;
+}
+
+.logo-footer h2 {
+  padding-left: 37px;
+  font-family: 'Young-serif';
+  font-size: 31.56px;
+  color: #E3CFBC;
+}
+
+/* FIM FOOTER */
+
+.realFundo {
+  height: 506px;
+  background-color: #6D5448;
+}
+
+.realFundo2 {
+  height: 438px;
+  background-color: #6D5448;
+}
+
+.fundoPre {
+  margin: 0 60px;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #6D5448;
+  margin-top: 50px;
+}
+
+
+.livros {
+  margin: 5.5% 0;
+  padding: 2% 0;
+  border-radius: 14px;
+  display: grid;
+  width: 236px;
+  height: 350px;
+  background-color: #FFEFDF;
+  justify-items: center;
+  text-align: center;
+}
+
+.livros2 {
+  margin: 0;
+}
+
+.livros img {
+  margin: 0 8.5%;
+  border-radius: 3px;
+  height: auto;
+  width: 148px;
+  box-shadow: 7px 7px #B99B8D;
+}
+
+.livros h2 {
+  font-family: 'Young-serif';
+  font-size: 23px;
+  color: #3C2520;
+}
+
+.livros p {
+  font-family: 'Poppins-regular';
+  font-size: 15px;
+  padding-bottom: 3.5%;
+}
+
+.buttonPreco {
+  left: 43px;
+  bottom: 30px;
+}
+
+.preco2 {
+  bottom: 40px;
+}
+
+.buttonPreco h3 {
+  padding-left: 7%;
+  font-size: 18px;
+  font-family: 'Poppins-regular';
+}
+
+.buttonPreco {
+  display: flex;
+  width: 191px;
+  height: 47px;
+  background-color: #3C2520;
+  position: relative;
+  font-family: 'Poppins-bold';
+  color: #F8F1EE;
+  font-size: 20px;
+  border-radius: 6px;
+  align-items: center;
+  overflow: hidden;
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.buttonPreco h3 {
+  padding-left: 7%;
+}
+
+.buttonPreco:hover {
+  transform: translateY(-10px);
+}
+
+.buttonPreco::before {
+  content: "Ver Mais";
+  font-family: 'Poppins-regular';
+  font-size: 17px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3C2520;
+  transition: background-color 0.2s;
+  /* Adiciona uma transição suave para a cor de fundo */
+  opacity: 0;
+  pointer-events: none;
+  /* Evita que o elemento "hover" seja clicável */
+}
+
+.buttonPreco:hover::before {
+  opacity: 3;
+  /* Torna o elemento "hover" visível quando o botão é hover */
+  background-color: #3C2520;
+  /* Muda a cor de fundo quando hover */
+}
+
+.icon-coracao {
+  width: 35px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.classificacao {
+  display: flex;
+}
+
+.classi {
+  width: 20px;
+  height: 20px;
+  margin-top: 12px;
+  margin-left: 10px
+}
+
+.aval {
+  display: flex;
+}
+
+.estrela {
+  width: 120px;
+  height: 25px;
+  margin-top: 8px;
+  margin-left: 10px;
+}
+
+.estrela-3-5 {
+  height: 20px;
+  width: 90px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.estrela-2-5 {
+  height: 20px;
+  width: 70px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.estrela-4 {
+  height: 20px;
+  width: 90px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.estrela-5 {
+  height: 20px;
+  width: 110px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.estrela-3 {
+  height: 20px;
+  width: 70px;
+  margin-top: 10px;
+  margin-left: 10px;
+}

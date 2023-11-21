@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editora LeNabi</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://kit.fontawesome.com/a2288264db.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="shortcut icon" href="img-interface/lenabi 1.png" type="image/x-icon">
+    <link rel="stylesheet" href="produto.css">
+    <script src="user.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <div class="container-fundo">
+            <div class="container">
+                <a href="index.html">
+                    <div class="logo">
+                        <img src="img-interface/lenabi 1.png" alt="borboleta voando dentro de um livro">
+                        <h2>LeNabi</h2>
+                    </div>
+                </a>
+                <div class="buscar">
+                    <input type="text" id="buscar" placeholder="Buscar livro" oninput="buscarProduto()">
+                </div>
+
+                <div id="favoritos" onclick="toggleFavoritos()">
+                    <div class="imagem">
+                        <i class="fa-regular fa-heart" style="color: #522318;"></i>
+                    </div>
+                    <span id="cont-favoritos">0</span>
+                </div>
+                <div id="carrinho-itens" style="display: none;">
+                    <ul id="itens-lista"></ul>
+                    <span id="preco-total">Valor Total: R$0,00</span>
+                    <button class="car" onclick="limparCarrinho()">Limpar Carrinho</button>
+                </div>
+                <!-- Dentro da div do usuário logado -->
+                <div class="usuario-logado" id="userHeader">
+                    <i class="fa-solid fa-user" style="color: #522318;"></i>
+                    <span id="nomeUsuario"></span>
+                    <i id="logoutButton" class="fa-solid fa-arrow-right-from-bracket" onclick="logout()"></i>
+                </div>
+
+
+                <a href="login.html" class="button" id="loginButton"><span>Fazer login</span></a>
+            </div>
+        </div>
+        <nav>
+            <div class="botoes">
+                <a href="produto.html#pre-venda">Pré-Venda</a>
+                <a href="produto.html#lancamentos-page">Lançamentos</a>
+                <a href="produto.html">Produtos</a>
+                <a href="sustentabilidade.html">Sustentabilidade</a>
+
+            </div>
+        </nav>
+    </header>
+    <main id="main">
+        <section id="banner">
+            <div class="app">
+
+                <div class="cardList">
+                    <button class="cardList__btn btn btn--left">
+                        <div class="icon">
+                            <svg>
+                                <use xlink:href="#arrow-left"></use>
+                            </svg>
+                        </div>
+                    </button>
+
+                    <div class="cards__wrapper">
+                        <div class="card current--card">
+                            <div class="card__image">
+                                <img src="img-interface/coração partido.webp" alt="" style="border-radius: 11px;" />
+                            </div>
+                        </div>
+
+                        <div class="card next--card">
+                            <div class="card__image">
+                                <img src="img-interface/felizes para nunca.webp" alt="" style="border-radius: 11px;" />
+                            </div>
+                        </div>
+
+                        <div class="card previous--card">
+                            <div class="card__image">
+                                <img src="img-interface/maldição do amor.webp" alt="" style="border-radius: 11px;" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="cardList__btn btn btn--right">
+                        <div class="icon">
+                            <svg>
+                                <use xlink:href="#arrow-right"></use>
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="infoList">
+                    <div class="info__wrapper">
+                        <div class="info current--info">
+                            <h1 class="text name">Era Uma Vez <br>Um Coração Partido</h1>
+                            <h4 class="text location">VOL . 1</h4>
+                            <p class="text description">Literatura fantástica</p>
+                        </div>
+
+                        <div class="info next--info">
+                            <h1 class="text name">A Balada Dos Felizes<br> Para Nunca</h1>
+                            <h4 class="text location">VOL . 2</h4>
+                            <p class="text description">Literatura fantástica</p>
+                        </div>
+
+                        <div class="info previous--info">
+                            <h1 class="text name">A Maldição do Amor</h1>
+                            <h4 class="text location">VOL . 3</h4>
+                            <p class="text description">Literatura fantástica</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="app__bg">
+                    <div class="bg__image bg-current">
+                        <img src="img-interface/coração partido.webp" alt="" />
+                    </div>
+                    <div class="bg__image bg-next">
+                        <img src="img-interface/felizes para nunca.webp" alt="" />
+                    </div>
+                    <div class="bg__image bg-previous">
+                        <img src="img-interface/maldição do amor.webp" alt="" />
+                    </div>
+                </div>
+            </div>
+
+            <svg class="icons" style="display: none;">
+                <symbol id="arrow-left" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
+                    <polyline points='328 112 184 256 328 400'
+                        style='fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px' />
+                </symbol>
+                <symbol id="arrow-right" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
+                    <polyline points='184 112 328 256 184 400'
+                        style='fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px' />
+                </symbol>
+            </svg>
+        </section>
+        <section id="novidades">
+            <div class="circulos">
+                <div class="circuloUm"></div>
+                <div class="circuloDois"></div>
+            </div>
+
+            <div class="novidade">
+                <h1>Novidade!</h1>
+            </div>
+
+            <div class="divsaoUm"></div>
+            <div class="divsaoDois"></div>
+
+        </section>
+        <section id="lancamentos">
+            <div class="container-lancamento">
+                <div id="slide">
+                    <div class="item" id="img1" style="background-image: url(img-interface/hoje\ depois\ amanha.webp);">
+                        <div class="content">
+                            <div class="name">Hoje, depois, amanhã</div>
+                            <div class="data">17/04/23</div>
+                            <div class="des">Comédia romântica entre dois nerds no último dia do ensino médio. Descobrem
+                                que podem não se odiar.
+                                <br>
+                                <a href="">Ver Mais</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item" id="img2" style="background-image: url(img-interface/irmaos\ Hawthorne.webp);">
+                        <div class="content">
+                            <div class="name">Os irmãos Hawthorne</div>
+                            <div class="data">05/09/23</div>
+                            <div class="des">Herdeiro bilionário ensinado a priorizar a família age para proteger
+                                meias-irmãs sem se envolver emocionalmente.
+                                <br>
+                                <a href="">Ver Mais</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item" id="img3" style="background-image: url(img-interface/ventos\ uivantes.webp);">
+                        <div class="content">
+                            <div class="name">O morro dos ventos uivantes</div>
+                            <div class="data">14/07/16</div>
+                            <div class="des">Uma trágica história de amor e obsessão entre Catherine Earnshaw e seu
+                                irmão adotivo, Heathcliff.
+                                <br>
+                                <a href="">Ver Mais</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item" id="img1" style="background-image: url(img-interface/hoje\ depois\ amanha.webp);">
+                        <div class="content">
+                            <div class="name">Hoje, depois, amanhã</div>
+                            <div class="data">17/04/23</div>
+                            <div class="des">Comédia romântica entre dois nerds no último dia do ensino médio. Descobrem
+                                que podem não se odiar.
+                                <br>
+                                <a href="">Ver Mais</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item" id="img2" style="background-image: url(img-interface/irmaos\ Hawthorne.webp);">
+                        <div class="content">
+                            <div class="name">Os irmãos Hawthorne</div>
+                            <div class="data">05/09/23</div>
+                            <div class="des">Herdeiro bilionário ensinado a priorizar a família age para proteger
+                                meias-irmãs sem se envolver emocionalmente.
+                                <br>
+                                <a href="">Ver Mais</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item" id="img3" style="background-image: url(img-interface/ventos\ uivantes.webp);">
+                        <div class="content">
+                            <div class="name">O morro dos ventos uivantes</div>
+                            <div class="data">14/07/16</div>
+                            <div class="des">Uma trágica história de amor e obsessão entre Catherine Earnshaw e seu
+                                irmão adotivo, Heathcliff.
+                                <br>
+                                <a href="">Ver Mais</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="but" class="buttons">
+                    <button id="prev"><i class="fa-solid fa-angles-left"></i></i></button>
+                    <button id="next"><i class="fa-solid fa-angles-right"></i></button>
+                </div>
+            </div>
+            </div>
+
+        </section>
+        <section id="Produtos">
+            <div class="conteudo">
+                <div class="tarja-tudo">
+                    <div class="linha linha-um"></div>
+                    <div class="tarja">
+                        <p data-aos="fade-right" data-aos-duration="1800">Veja nossos<br><span>Produtos</span></p>
+                    </div>
+                    <div class="linha linha-dois"></div>
+                </div>
+                <div class="texto-img">
+                    <div class="info-produtos">
+                        <div class="texto">
+                            <img src="img-interface/mdi_paper-outline.svg" alt="">
+                            <div class="detalhes">
+                                <h3>Folhas Recicladas</h3>
+                                <p>Livros com folhas recicladas promovem uma leitura sustentável, reduzindo conservando
+                                    recursos naturais. </p>
+                            </div>
+
+                        </div>
+                        <div class="texto">
+                            <img src="img-interface/ion_library-outline.svg" alt="">
+                            <div class="detalhes-library colecao">
+                                <h3>Nossas Coleções</h3>
+                                <p>Descubra as novas coleções de livros, com histórias envolventes, que cativarão
+                                    leitores de todas as idades. </p>
+                            </div>
+
+                        </div>
+                        <div class="texto">
+                            <img src="img-interface/material-symbols_book-outline.svg" alt="">
+                            <div class="detalhes">
+                                <h3>Best-Sellers</h3>
+                                <p>A LeNabi oferece livros de qualidade, como "Jogo Fatal", "A Cabana" e "O Ceifador",
+                                    que cativam leitores os com reflexões profundas.</p>
+                            </div>
+                        </div>
+                        <div class="botao-linha">
+                            <div class="linha-botao"></div>
+                            <a href="#">Ver mais</a>
+                        </div>
+                    </div>
+
+                    <div class="scroll-img">
+                        <div class="div1">
+                            <a href=""><img src="img-interface/biblioteca meia noite.jpg" alt="" data-aos="fade-left"
+                                    data-aos-duration="2000"></a>
+                            <a href=""><img src="img-interface/a cabana.jpg" alt="" data-aos="fade-left"
+                                    data-aos-duration="2000"></a>
+
+                        </div>
+                        <div class="div2">
+                            <a href=""><img src="img-interface/daisy jones.jpg" alt="" data-aos="fade-left"
+                                    data-aos-duration="2000"></a>
+
+                            <a href=""><img src="img-interface/ladrao de raios.jpg" alt="" data-aos="fade-left"
+                                    data-aos-duration="2000"></a>
+
+
+
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <section id="ScrollTrigger">
+
+            <div class="divisoria"></div>
+
+            <div class="container-scroll" id="scroll-container">
+                <h1><span class="primeiro">Quer ficar por dentro das
+                        <h1 class="young">novidades?</h1>
+                    </span></h1>
+                <h1><span class="segundo">Participe do nosso
+                        <h1 class="young">NEWSLETTER</h1>
+                    </span></h1>
+                <h3><span class="terceiro">Receba as novidades
+                        <h1 class="young">na palma da mão.</h1>
+                        <form><input type="text" placeholder="Escreva aqui">
+                            <button>Enviar</button>
+                        </form>
+                    </span></h3>
+
+            </div>
+        </section>
+        <section id="sustentabilidade">
+            <div class="sustentabilidade">
+                <div class="sustentavel-img">
+                    <div class="circle">
+                        <div class="circle-um"></div>
+                        <div class="circle-dois"></div>
+                    </div>
+                    <img src="img-interface/unsplash_x8ZStukS2PM.png" alt="" class="mao-terra">
+                    <img src="img-interface/papel.svg" alt="" class="papel">
+                    <img src="img-interface/lenabi 1.png" alt="" class="logo-sustevel">
+                    <h2>LeNabi</h2>
+                </div>
+                <div class="textoSustentavel">
+                    <h1>conheça nosso projeto<br><span class="e">&</span><span> ajude o mundo!</span></h1>
+                    <p>Através das palavras, contribuímos para um mundo melhor. Junte-se a nós nessa jornada literária e
+                        sustentável e faça parte da nossa história em constante progresso.</p>
+                    <a href="#"><button>Ver mais</button></a>
+                </div>
+            </div>
+            <div class="linhaSeparacao"></div>
+        </section>
+    </main>
+    <footer>
+        <div class="container-footer">
+            <nav>
+                <div class="parte1">
+                    <a href="index.html#but">Produtos</a>
+                    <a href="index.html#lancamentos">Lançamentos</a>
+                    <a href="index.html#header">Pré-venda</a>
+                </div>
+                <div class="parte2">
+                    <a href="#">Favoritos</a>
+                    <a href="sustentabilidade.html">Sustentabilidade</a>
+                    <a href="sobre-nos.html">Sobre nós</a>
+                </div>
+            </nav>
+            <div class="redes-sociais">
+                <a href="mailto:editoralenabi@gmail.com" target="_blank"><img src="img-interface/carbon_email.svg"
+                        alt=""></a>
+                <a href="https://www.instagram.com/editoralenabi/?igshid=YTQwZjQ0NmI0OA%3D%3D" target="_blank"><img
+                        src="img-interface/uil_instagram.svg" alt=""></a>
+                <a href="https://x.com/LeNabiEditora?t=-ry8Op0ZSihvYuzXTeuZ8w&s=09" target="_blank"><img
+                        src="img-interface/simple-icons_x.svg" alt=""></a>
+            </div>
+            <div class="logo-footer">
+                <img src="img-interface/lenabi 1.png" alt="">
+                <h2>LeNabi</h2>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src='https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js'></script>
+    <script src='https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.0.3/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+    <script src="user.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            renderizarCabecalho();
+        });
+    </script>
+
+
+</body>
+
+</html>

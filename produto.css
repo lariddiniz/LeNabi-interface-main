@@ -1,0 +1,284 @@
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #F8F1EE;
+}
+
+@font-face {
+  font-family: 'Young-serif';
+  src: url(font/YoungSerif-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Poppins-regular';
+  src: url(font/Poppins-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Poppins-Semi';
+  src: url(font/Poppins-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: 'Poppins-medium';
+  src: url(font/Poppins-Medium.ttf);
+}
+
+@font-face {
+  font-family: 'Poppins-bold';
+  src: url(font/Poppins-Bold.ttf);
+}
+
+#conteudo {
+  margin-top: 49px;
+  height: auto;
+}
+
+.setor1Produto h1 {
+  font-family: 'Young-serif';
+  color: #3C2520;
+  font-size: 48px;
+  margin-top: 119px;
+  margin-left: 198px;
+}
+
+
+.topicos {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 97px;
+  margin: 97px 165px;
+}
+
+
+
+.iconeFolha,
+.iconeAmazon {
+  display: grid;
+  font-family: 'Poppins-regular';
+  text-align: center;
+  justify-items: center;
+  font-size: 17.5px;
+}
+
+.iconeFolha,
+.iconeAmazon p {
+  width: 361px;
+}
+
+.cuboMarrom,
+.cubo2Marrom {
+  display: flex;
+  background-color: #3C2520;
+  width: 83px;
+  height: 83px;
+  border-radius: 15px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.cuboMarrom img {
+  width: 50px;
+}
+
+.cubo2Marrom img {
+  width: 60px;
+}
+
+.linha1Produto {
+  width: 1111px;
+  height: 5px;
+  border-radius: 10px;
+  background: #4f250d;
+  margin: 0 13.3% 0%;
+}
+
+.titulo-pre {
+  margin: 2.3% 13.3%;
+  ;
+}
+
+.titulo-pre h1 {
+  font-family: 'Young-serif';
+  color: #3C2520;
+  font-size: 48px;
+}
+
+.titulo-pre p {
+  font-family: 'Poppins-regular';
+  font-size: 17.5px;
+  width: 782px;
+}
+
+.realFundo {
+  height: 506px;
+  background-color: #6D5448;
+}
+
+.realFundo2{
+  height: 438px;
+  background-color: #6D5448;
+}
+
+.fundoPre {
+  margin: 0 60px;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #6D5448;
+}
+
+
+.livros {
+  margin: 5.5% 0;
+  padding: 2% 0;
+  border-radius: 14px;
+  display: grid;
+  width: 236px;
+  height: 350px;
+  background-color: #FFEFDF;
+  justify-items: center;
+  text-align: center;
+}
+
+/* Estilo para a área de busca */
+.area-de-busca {
+  padding-top: 21px;
+  display: flex;
+  width: 80%;
+  margin: 0 10%;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 5%;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-family: 'Poppins-Semi';
+  color: #9a594b;
+  border-radius: 17px;
+  min-height: 470px;
+}
+
+.area-de-busca .livros2 {
+  margin: 3% 0;
+  margin-bottom: 5%;
+}
+
+.area-de-busca .livros {
+  margin: 3% 3%;
+  background-color:#3C2520 ;
+   color:#FFEFDF; 
+}
+
+.area-de-busca .livros h2{
+  color:#FFEFDF;
+}
+
+.area-de-busca .livros .buttonPreco{
+  background-color: #FFEFDF;
+  border: 1.5px #3c252075 solid;
+}
+
+.area-de-busca .livros h3{
+  color: #3C2520;
+}
+
+.area-de-busca .livros img{
+  box-shadow: 7px 7px #E3C7BA;
+}
+
+
+
+.livros2{
+  margin: 0;
+}
+
+.livros img {
+  margin: 0 8.5%;
+  border-radius: 3px;
+  height: auto;
+  width: 148px;
+  box-shadow: 7px 7px #B99B8D;
+}
+
+.livros h2 {
+  font-family: 'Young-serif';
+  font-size: 23px;
+  color: #3C2520;
+}
+
+.livros p {
+  font-family: 'Poppins-regular';
+  font-size: 15px;
+  padding-bottom: 3.5%;
+}
+
+.buttonPreco {
+  left: 43px;
+  bottom: 30px;
+}
+
+.preco2 {
+  bottom: 40px;
+}
+
+.buttonPreco h3 {
+  padding-left: 7%;
+  font-size: 22px;
+}
+
+.l-dois {
+  margin: 3% 13.3%;
+}
+
+.l-tres{
+  margin: 4.7% 13.3%;
+}
+
+
+.buttonPreco {
+  display: flex;
+  width: 191px;
+  height: 47px;
+  background-color: #3C2520;
+  position: relative;
+  font-family: 'Poppins-bold';
+  color: #F8F1EE;
+  font-size: 20px;
+  border-radius: 6px;
+  align-items: center;
+  overflow: hidden;
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.buttonPreco h3 {
+  padding-left: 7%;
+}
+
+.buttonPreco:hover {
+  transform: translateY(-10px);
+}
+.buttonPreco::before {
+  content: "Ver Mais";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color:  #3C2520;
+  transition: background-color 0.2s; /* Adiciona uma transição suave para a cor de fundo */
+  opacity: 0;
+  pointer-events: none; /* Evita que o elemento "hover" seja clicável */
+}
+.buttonPreco:hover::before {
+  opacity: 3; /* Torna o elemento "hover" visível quando o botão é hover */
+  background-color:  #3C2520; /* Muda a cor de fundo quando hover */
+}

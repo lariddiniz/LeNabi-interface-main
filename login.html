@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeNabi - Login</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a2288264db.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header id="header-login">
+        <div class="container container-login">
+            <a href="index.html">
+                <div class="logo">
+                    <img src="img-interface/lenabi 1.png" alt="borboleta voando dentro de um livro">
+                    <h2>LeNabi</h2>
+                </div>
+            </a>
+
+            <div id="favoritos" class="favoritos-login" onclick="toggleFavoritos()">
+                <div class="imagem">
+                    <i class="fa-regular fa-heart" style="color: #522318;"></i>
+                </div>
+                <span id="cont-favoritos">0</span>
+            </div>
+            <a href="login.html" class="button"><span>Fazer login</span></a>
+        </div>
+        <nav>
+            <div class="botoes botoes-login"></div>
+        </nav>
+    </header>
+    <main>
+        <div class="box">
+            <div class="conteudo-login">
+                <div class="titulo">
+                    <h3><span>Bem-vindo</span><br>de volta!</h3>
+                    <div class="linha-titulo"></div>
+                </div>
+                <div class="campo">
+                    <div class="usuario">
+                        <i class="fa fa-user" style="color: #522318"></i>
+                        <div class="linha-input"></div>
+                        <input type="text" id="nomeUsuario" placeholder="Usuário ou e-mail" name="userInput" required>
+                    </div>
+                    <div class="senha">
+                        <i class="fa-solid fa-key" style="color: #522318" id="iconSenha"></i>
+                        <div class="linha-senha"></div>
+                        <i class="fa-regular fa-eye-slash" style="color: #835248" id="iconOlho"></i>
+                        <input type="password" placeholder="Senha" required id="senhaInput" name="senhaInput">
+                    </div>
+                </div>
+                <div class="outros-registros">
+                    <button id="loginButton">Entrar</button>
+                    <p>Não tem conta? <a href="cadastro.html"><span>Registre-se!</span></a></p>
+                </div>
+                <div class="login-sociais">
+                    <div class="linha-sociais"></div>
+                    <p>ou</p>
+                    <div class="line-icons"></div>
+                    <div class="line-icons2"></div>
+                    <div class="icons">
+                        <img src="img-interface/Group 9.svg" alt="">
+                        <img src="img-interface/Group 10.svg" alt="">
+                        <img src="img-interface/Group 11.svg" alt="">
+                    </div>
+
+                </div>
+            </div>
+            <img class="img-login" src="img-interface/valentin-antonini-0eTLk6dA_Ds-unsplash 1.png" alt="">
+        </div>
+    </main>
+    <footer>
+        <div class="container-footer">
+            <nav>
+                <div class="parte1">
+                    <a href="#">Produtos</a>
+                    <a href="#">Lançamentos</a>
+                    <a href="#">Pré-venda</a>
+                </div>
+                <div class="parte2">
+                    <a href="#">Favoritos</a>
+                    <a href="#">Sustentabilidade</a>
+                    <a href="#">Sobre nós</a>
+                </div>
+            </nav>
+            <div class="redes-sociais">
+                <a href=""><img src="img-interface/carbon_email.svg" alt=""></a>
+                <a href=""><img src="img-interface/uil_instagram.svg" alt=""></a>
+                <a href=""><img src="img-interface/simple-icons_x.svg" alt=""></a>
+            </div>
+            <div class="logo-footer">
+                <img src="img-interface/lenabi 1.png" alt="">
+                <h2>LeNabi</h2>
+            </div>
+        </div>
+    </footer>
+    <script>
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const iconOlho = document.getElementById("iconOlho");
+            const senhaInput = document.getElementById("senhaInput");
+            const loginButton = document.getElementById("loginButton");
+            const userInput = document.getElementById("userInput");
+
+            iconOlho.addEventListener("click", () => {
+                if (senhaInput.type === "password") {
+                    senhaInput.type = "text";
+                    iconOlho.classList.remove("fa-regular");
+                    iconOlho.classList.remove("fa-eye-slash");
+                    iconOlho.classList.add("fa-solid");
+                    iconOlho.classList.add("fa-eye");
+                } else {
+                    senhaInput.type = "password";
+                    iconOlho.classList.remove("fa-solid");
+                    iconOlho.classList.remove("fa-eye");
+                    iconOlho.classList.add("fa-regular");
+                    iconOlho.classList.add("fa-eye-slash");
+                }
+            })
+        });
+
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const loginButton = document.getElementById("loginButton");
+
+            if (loginButton) {
+                loginButton.addEventListener("click", realizarLogin);
+            } else {
+                console.error("Elemento 'loginButton' não encontrado. Verifique os IDs no HTML.");
+            }
+
+            function realizarLogin() {
+                const storedUserData = JSON.parse(localStorage.getItem('userData'));
+                const emailUsuario = document.getElementById("nomeUsuario").value;
+                const senha = document.getElementById("senhaInput").value;
+
+                if (storedUserData && (
+                    (emailUsuario === storedUserData.userInput || emailUsuario === storedUserData.email) &&
+                    senha === storedUserData.senhaInput
+                )) {
+                    // Obtém o nome do usuário do objeto storedUserData
+                    const nomeUsuario = storedUserData.nomeUsuario || storedUserData.nome || 'NomeRealDoUsuario';
+
+                    // Adiciona o nome do usuário ao localStorage
+                    localStorage.setItem('nomeUsuario', nomeUsuario);
+
+                    alert("Login bem-sucedido!");
+                    window.location.href = "index.html";
+                } else {
+                    alert("Credenciais incorretas. Por favor, tente novamente.");
+                }
+            }
+        });
+
+//         document.addEventListener('DOMContentLoaded', function () {
+//     const loginButton = document.getElementById("loginButton");
+
+//     if (loginButton) {
+//         loginButton.addEventListener("click", realizarLogin);
+//     } else {
+//         console.error("Elemento 'loginButton' não encontrado. Verifique os IDs no HTML.");
+//     }
+
+//     function realizarLogin() {
+//         const storedUserData = JSON.parse(localStorage.getItem('userData'));
+//         const emailUsuario = document.getElementById("nomeUsuario").value; // Certifique-se de que este ID corresponde ao HTML
+//         const senha = document.getElementById("senhaInput").value;
+
+//         if (storedUserData && (
+//             (emailUsuario === storedUserData.userInput || emailUsuario === storedUserData.email) &&
+//             senha === storedUserData.senhaInput
+//         )) {
+//             // Obtém o nome do usuário do objeto storedUserData
+//             const nomeUsuario = storedUserData.nomeUsuario || storedUserData.nome || 'NomeRealDoUsuario';
+
+//             // Adiciona o nome do usuário ao localStorage
+//             localStorage.setItem('nomeUsuario', nomeUsuario);
+
+//             // Recupera os itens do carrinho do localStorage
+//             const itensCarrinhoArmazenados = JSON.parse(localStorage.getItem('itensCarrinho')) || {};
+
+//             // Atualiza a variável 'itensCarrinho' com os itens do localStorage
+//             for (let itemNome in itensCarrinhoArmazenados) {
+//                 const item = itensCarrinhoArmazenados[itemNome];
+//                 if (!itensCarrinho[itemNome]) {
+//                     itensCarrinho[itemNome] = item;
+//                 }
+//             }
+
+//             // Atualiza a exibição do carrinho
+//             updateCarrinho();
+
+//             alert("Login bem-sucedido!");
+//             window.location.href = "index.html";
+//         } else {
+//             alert("Credenciais incorretas. Por favor, tente novamente.");
+//         }
+//     }
+// });
+
+
+    </script>
+
+</body>
+
+</html>
